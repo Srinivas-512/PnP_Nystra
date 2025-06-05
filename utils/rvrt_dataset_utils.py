@@ -9,7 +9,7 @@ import torch
 from os import path as osp
 import torch.utils.data as data
 
-import utils_video as utils_video
+import utils.utils_video as utils_video
 
 
 class VideoRecurrentTestDataset(data.Dataset):

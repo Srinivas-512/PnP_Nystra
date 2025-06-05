@@ -16,7 +16,7 @@ from functools import reduce
 from operator import mul
 from einops import rearrange
 from einops.layers.torch import Rearrange
-from deformable_attn.deform_attn import deform_attn, DeformAttnPack
+from utils.deformable_attn.deform_attn import deform_attn, DeformAttnPack
 
 
 def closest_square_factors(N: int) -> tuple[int,int]:
