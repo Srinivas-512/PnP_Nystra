@@ -1,0 +1,5 @@
+python run_swinir.py --scale 8 --model_path pretrained_models/SwinIR/x8.pth --folder_lq datasets/SwinIR/Set5/LR_bicubic/X8 --folder_gt datasets/SwinIR/Set5/HR --mech original
+
+python run_uformer.py --input_dir datasets/SIDD/val --result_dir ./results/denoising/SIDD/ --weights pretrained_models/Uformer/denoise.pth --mech original 
+
+python run_rvrt.py --folder_lq datasets/RVRT/Vid4/BDx4 --folder_gt datasets/RVRT/Vid4/GT --tile 10 64 64 --tile_overlap 2 20 20 --mech pnp_nystra
