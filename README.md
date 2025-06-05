@@ -8,10 +8,11 @@
 </div>
 
 ---
-
-<p align="center"> PnP-Nystra is a Nyström-based, **training-free** replacement for MHSA in image/video restoration models (e.g., SwinIR, Uformer, RVRT). It delivers **2–4× GPU** and **2–5× CPU** inference speedups with under 1.5 dB PSNR loss on denoising, deblurring, and super-resolution tasks.
-    <br> 
+<p align="center">
+  PnP-Nystra is a Nyström-based, <strong>training-free</strong> replacement for MHSA in image/video restoration models (e.g., SwinIR, Uformer, RVRT). It delivers <strong>2–4× GPU</strong> and <strong>2–5× CPU</strong> inference speedups with under 1.5 dB PSNR loss on denoising, deblurring, and super-resolution tasks.
+  <br>
 </p>
+
 
 ## 📝 Table of Contents
 - [About](#about)
