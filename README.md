@@ -29,14 +29,87 @@
 Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
 
 ### Prerequisites
-What things you need to install the software and how to install them.
 
-```
-Give examples
-```
+Before running the code, make sure you have the following items in place:
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
+
+2. **Download pretrained models**
+
+   * Go to the Google Drive link for pretrained models:
+
+     ```
+     https://drive.google.com/your-pretrained-models-link
+     ```
+   * Download the ZIP (or folder) and extract its contents (if zipped).
+   * Place everything under:
+
+     ```
+     ./models/
+     ```
+
+     For example, after extraction you might have:
+
+     ```
+     your-repo/
+       └─ models/
+           ├─ checkpoint1.pth
+           └─ checkpoint2.pth
+     ```
+
+3. **Download datasets**
+
+   * Go to the Google Drive link for datasets:
+
+     ```
+     https://drive.google.com/your-datasets-link
+     ```
+   * Download the archive (or folders) and extract as needed.
+   * Place the dataset files under:
+
+     ```
+     ./data/
+     ```
+
+     For example:
+
+     ```
+     your-repo/
+       └─ data/
+           ├─ BSDS200/
+           ├─ RealBlur_R/
+           ├─ RealBlur_J/
+           └─ SIDD/
+     ```
+
+4. **Verify directory structure**
+   After steps 2 and 3, your repository should look roughly like:
+
+   ```
+   your-repo/
+   ├─ models/
+   │   ├─ pretrained_model1.pth
+   │   └─ pretrained_model2.pth
+   ├─ data/
+   │   ├─ BSDS200/
+   │   ├─ RealBlur_R/
+   │   ├─ RealBlur_J/
+   │   └─ SIDD/
+   ├─ test_all.py
+   ├─ utils/
+   ├─ models/
+   └─ README.md
+   ```
+
+Once you’ve cloned the repo, and placed the downloaded models into `./models/` and the datasets into `./data/`, you’re ready to run the inference scripts.
+
 
 ### Installing
 A step by step series of examples that tell you how to get a development env running.
