@@ -28,9 +28,7 @@
 ## 🧐 About <a name = "about"></a>
 Write about 1-2 paragraphs describing the purpose of your project.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-### Prerequisites
+## 🏁 Prerequisites <a name = "getting_started"></a>
 
 1. **Clone the repository**
 
@@ -87,23 +85,13 @@ Write about 1-2 paragraphs describing the purpose of your project.
            └─ Uformer/
      ```
 
+4. **Installing dependencies**
+   Make sure you have Python ≥3.7 installed. From within the repository root, run:  
+   ```bash
+   pip install -r requirements.txt
 
-### Installing
-A step by step series of examples that tell you how to get a development env running.
 
-Say what the step will be
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
 Explain how to run the automated tests for this system.
