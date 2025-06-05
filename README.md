@@ -1,4 +1,4 @@
-<h3 align="center">Plug-and-Play Linear Attention for Pre-Trained Image and Video Restoration Models</h3>
+<h1 align="center">PnP-Nystra : Plug-and-Play Linear Attention for Pre-Trained Image and Video Restoration Models</h1>
 
 <div align="center">
 
