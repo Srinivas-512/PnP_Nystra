@@ -218,7 +218,7 @@ The file `timing_analysis.py` provides a simple script for measuring and compari
    * “PnP-Nystra takes (ms)” → average forward time for PnP-Nystra.
    * “Original takes (ms)” → average forward time for the default softmax attention.
 
-Because this is meant for the ablation study (to demonstrate how runtime scales with sequence length and landmark count), there is no additional command‐line interface—everything is configured by editing the script’s `__main__` section. You can change `all_sizes`, `num_landmarks`, `iters`, and `device` to reproduce or extend the timing results reported in the paper.
+Because this is meant for the ablation study (to demonstrate how runtime scales with sequence length), there is no additional command‐line interface—everything is configured by editing the script’s `__main__` section. You can change `all_sizes`, `num_landmarks`, `iters`, and `device` to reproduce or extend the timing analysis reported in the ablation study.
 
 
 ## Authors <a name = "authors"></a>
