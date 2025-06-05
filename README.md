@@ -192,7 +192,7 @@ You can swap `<Dataset>`, `<scale>`, `<model>.pth`, `device` and `mech` as neede
 
 ## Timing analysis <a name="timing"></a>
 
-The file `timing_analysis.py` provides a simple script for measuring and comparing forward‐pass times between the original window‐attention mechanism and the proposed PnP-Nystra attention. This is used solely for the ablation study in the paper (i.e., evaluating how sequence length, number of landmarks, iteration count, and device affect attention runtime). **This timing script is *not* used during inference for any individual model.**
+The file `timing_analysis.py` provides a simple script for measuring and comparing forward‐pass times between the original window‐attention mechanism and the proposed PnP-Nystra attention. This is used solely for the ablation study on effect of sequence length on inference time in the paper. **This timing script is *not* used during inference for any individual model.**
 
 **How to use:**
 
