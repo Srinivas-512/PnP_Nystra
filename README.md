@@ -25,10 +25,10 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+## About <a name = "about"></a>
 Write about 1-2 paragraphs describing the purpose of your project.
 
-## 🏁 Prerequisites <a name = "getting_started"></a>
+## Prerequisites <a name = "getting_started"></a>
 
 1. **Clone the repository**
 
@@ -89,11 +89,11 @@ Write about 1-2 paragraphs describing the purpose of your project.
    Make sure you have Python ≥3.7 installed. From within the repository root, run:  
    ```bash
    pip install -r requirements.txt
+   ```
 
 
 
-
-## 🔧 Running the tests <a name = "tests"></a>
+## Running inference <a name = "tests"></a>
 Explain how to run the automated tests for this system.
 
 ### Break down into end to end tests
