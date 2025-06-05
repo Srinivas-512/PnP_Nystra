@@ -142,7 +142,8 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/SIDD/val \
     --result_dir  ./results/denoising/SIDD/ \
     --weights     pretrained_models/Uformer/denoise.pth \
-    --mech        pnp_nystra
+    --mech        pnp_nystra \
+    --device      cuda
 ```
 
 * `--input_dir`: folder of noisy images (e.g. `datasets/Uformer/SIDD/val`).
@@ -158,7 +159,8 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/RealBlur-R/val \
     --result_dir  ./results/deblurring/RealBlur-R/ \
     --weights     pretrained_models/Uformer/deblur.pth \
-    --mech        pnp_nystra
+    --mech        pnp_nystra \
+    --device      cuda
 ```
 
 * `--input_dir`: folder of blurred images (e.g. `datasets/Uformer/RealBlur-R/val`).
@@ -183,7 +185,7 @@ python run_rvrt.py \
 
 * `--folder_lq` / `--folder_gt`: low-quality and ground-truth video folders.
 * `--model_path`: path to `Vid.pth` (for Vid4) or `REDS.pth` (for REDS4).
-* `--tile` / `--tile_overlap`: how the input is tiled (e.g. `10 64 64` and `2 20 20`).
+* `--tile` / `--tile_overlap`: how the input is tiled (e.g. `10 64 64` and `2 20 20` to reproduce paper experiments).
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 
 ---
@@ -191,31 +193,8 @@ python run_rvrt.py \
 You can swap `<Dataset>`, `<scale>`, `<model>.pth`, `device` and `mech` as needed to reproduce experiments from the paper.
 
 
-### Break down into end to end tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## 🎈 Usage <a name="usage"></a>
 Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
