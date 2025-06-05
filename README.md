@@ -199,6 +199,10 @@ Add notes about how to use the system.
 
 
 ## Acknowledgements <a name = "acknowledgement"></a>
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+This repository builds upon and integrates the original codebases of:
+
+* [SwinIR](https://github.com/JingyunLiang/SwinIR) by Jingyun Liang et al.
+* [Uformer](https://github.com/ZhendongWang6/Uformer) by Zhendong Wang et al.
+* [RVRT](https://github.com/JingyunLiang/RVRT) by Jingyun Liang et al.
+
+We gratefully acknowledge the authors for their excellent work and for releasing their implementations under open licenses.
