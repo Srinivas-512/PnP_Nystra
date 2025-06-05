@@ -139,6 +139,7 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/SIDD/val \
     --result_dir  ./results/denoising/SIDD/ \
     --weights     pretrained_models/Uformer/denoise.pth \
+    --dataset     SIDD \
     --mech        pnp_nystra \
     --device      cuda
 ```
@@ -146,6 +147,7 @@ python run_uformer.py \
 * `--input_dir`: folder of noisy images (e.g. `datasets/Uformer/SIDD/val`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `denoise.pth`.
+* `--dataset`: dataset being tested (SIDD/BSDS)
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 * `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
@@ -156,6 +158,7 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/RealBlur-R/val \
     --result_dir  ./results/deblurring/RealBlur-R/ \
     --weights     pretrained_models/Uformer/deblur.pth \
+    --dataset     RealBlur_R
     --mech        pnp_nystra \
     --device      cuda
 ```
