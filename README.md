@@ -139,6 +139,7 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/SIDD/val \
     --result_dir  ./results/denoising/SIDD/ \
     --weights     pretrained_models/Uformer/denoise.pth \
+    --dataset     SIDD \
     --mech        pnp_nystra \
     --device      cuda
 ```
@@ -146,6 +147,7 @@ python run_uformer.py \
 * `--input_dir`: folder of noisy images (e.g. `datasets/Uformer/SIDD/val`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `denoise.pth`.
+* `--dataset`: dataset being tested (SIDD/BSDS)
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 * `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
@@ -156,6 +158,7 @@ python run_uformer.py \
     --input_dir   datasets/Uformer/RealBlur-R/val \
     --result_dir  ./results/deblurring/RealBlur-R/ \
     --weights     pretrained_models/Uformer/deblur.pth \
+    --dataset     RealBlur_R
     --mech        pnp_nystra \
     --device      cuda
 ```
@@ -191,7 +194,35 @@ You can swap `<Dataset>`, `<scale>`, `<model>.pth`, `device` and `mech` as neede
 
 
 ## Timing analysis <a name="timing"></a>
-Add notes about how to use the system.
+
+The file `timing_analysis.py` provides a simple script for measuring and comparing forward‐pass times between the original window‐attention mechanism and the proposed PnP-Nystra attention. This is used solely for the ablation study on effect of sequence length on inference time in the paper. **This timing script is *not* used during inference for any individual model.**
+
+**How to use:**
+
+1. Open `timing_analysis.py` and modify the following variables in the `__main__` block as needed:
+
+   * `all_sizes`: a list of window‐side lengths (e.g., `[16, 32, 64, 128]`). Each entry defines a square window of size `window_size × window_size` (so sequence length = `window_size²`).
+   * `num_landmarks`: number of landmarks (default `16`).
+   * `iters`: number of iterations for the Moore-Penrose pseudo-inverse (default `3`).
+   * `device`: either `'cpu'` or `'cuda'` (default `'cpu'`).
+
+2. Run the script as-is. For example:
+
+   ```bash
+   python timing_analysis.py
+   ```
+
+   * The script will iterate over each `window_size` in `all_sizes`, compute MSE between original and PnP-Nystra attention outputs (for sanity check), then measure average runtime (in ms) over 100 repeats (discarding the first 5 iterations as warmup) for both original and PnP-Nystra attention.
+
+3. Inspect the printed outputs. For each window size, you’ll see:
+
+   * The squared‐window size (e.g., “Testing window size 16 with 256 tokens”).
+   * The MSE error between attention outputs (should be very small).
+   * “PnP-Nystra takes (ms)” → average forward time for PnP-Nystra.
+   * “Original takes (ms)” → average forward time for the default softmax attention.
+
+Because this is meant for the ablation study (to demonstrate how runtime scales with sequence length), there is no additional command‐line interface—everything is configured by editing the script’s `__main__` section. You can change `all_sizes`, `num_landmarks`, `iters`, and `device` to reproduce or extend the timing analysis reported in the ablation study.
+
 
 ## Authors <a name = "authors"></a>
 - [Srinivasan Kidambi](https://github.com/Srinivas-512)
