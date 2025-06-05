@@ -110,7 +110,7 @@ Below is a concise summary of supported datasets/models, followed by short subse
 
 ---
 
-### 1. SwinIR (Super-Resolution)
+### 1. SwinIR (Image Super-Resolution)
 
 ```bash
 python run_swinir.py \
@@ -132,7 +132,7 @@ python run_swinir.py \
 
 ### 2. Uformer
 
-#### 2.1 Denoising (SIDD or BSDS200)
+#### 2.1 Image Denoising (SIDD or BSDS200)
 
 ```bash
 python run_uformer.py \
@@ -149,7 +149,7 @@ python run_uformer.py \
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 * `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
-#### 2.2 Deblurring (RealBlur-R)
+#### 2.2 Image Deblurring (RealBlur-R)
 
 ```bash
 python run_uformer.py \
@@ -168,7 +168,7 @@ python run_uformer.py \
 
 ---
 
-### 3. RVRT (Video Restoration)
+### 3. RVRT (Video Super-Resolution)
 
 ```bash
 python run_rvrt.py \
