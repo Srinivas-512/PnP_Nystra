@@ -18,7 +18,7 @@ from collections import OrderedDict
 from torch.utils.data import DataLoader
 import time
 from models.rvrt import RVRT as net
-from utils import utils_image as util
+from utils import rvrt_image_utils as util
 from utils.rvrt_dataset_utils import VideoRecurrentTestDataset, VideoTestVimeo90KDataset, SingleVideoRecurrentTestDataset
 
 import random
@@ -40,6 +40,7 @@ def main():
                         help='Overlapping of different tiles')
     parser.add_argument('--num_workers', type=int, default=16, help='number of workers in data loading')
     parser.add_argument('--save_result', action='store_true', help='save resulting image')
+    parser.add_argument('--model_path', type = str, required=True)
 
     parser.add_argument('--mech', type = str, default='original')
 
