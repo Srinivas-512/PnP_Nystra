@@ -16,12 +16,9 @@
 
 ## 📝 Table of Contents
 - [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
+- [Prerequisites](#getting_started)
+- [Running inference](#tests)
+- [Timing analysis](#timing)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
@@ -193,15 +190,15 @@ python run_rvrt.py \
 You can swap `<Dataset>`, `<scale>`, `<model>.pth`, `device` and `mech` as needed to reproduce experiments from the paper.
 
 
-## 🎈 Usage <a name="usage"></a>
+## Timing analysis <a name="timing"></a>
 Add notes about how to use the system.
 
-## ✍️ Authors <a name = "authors"></a>
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+## Authors <a name = "authors"></a>
+- [Srinivasan Kidambi](https://github.com/Srinivas-512)
+- [Dr. Pravin Nair](https://github.com/pravin1390)
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+## Acknowledgements <a name = "acknowledgement"></a>
 - Hat tip to anyone whose code was used
 - Inspiration
 - References
