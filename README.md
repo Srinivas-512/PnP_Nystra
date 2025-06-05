@@ -95,7 +95,7 @@ Write about 1-2 paragraphs describing the purpose of your project.
 
 ## Running inference <a name = "tests"></a>
 
-Below is a concise summary of supported datasets/models, followed by short subsections for each model showing only the relevant flags (`--folder_*` or `--input_dir`/`--result_dir`, `--model_path`, and `--mech`). All example commands use **PnP-Nystra** as the proposed method.
+Below is a concise summary of supported datasets/models, followed by short subsections for each model showing only the flags relevant to experimentation as presented in the paper (`--folder_*` or `--input_dir`/`--result_dir`, `--model_path`, `--mech`, `--device`). All example commands use PnP-Nystra as the proposed method, but this can be switched out for original Window Attention as well.
 
 ---
 
@@ -109,6 +109,7 @@ Below is a concise summary of supported datasets/models, followed by short subse
 >
 > * All pre-trained weights live under `pretrained_models/<ModelName>/…`.
 > * All datasets are stored under `datasets/<ModelName>/…`.
+> * This follows from steps 2 and 3 of Prerequisites above
 
 ---
 
@@ -120,13 +121,15 @@ python run_swinir.py \
     --model_path pretrained_models/SwinIR/x8.pth \
     --folder_lq  datasets/SwinIR/Set5/LR_bicubic/X8 \
     --folder_gt  datasets/SwinIR/Set5/HR \
-    --mech       pnp_nystra
+    --mech       pnp_nystra \
+    --device     cuda
 ```
 
 * `--scale`: upscaling factor (2, 4 or 8).
 * `--model_path`: path to the `.pth` file (e.g. `x8.pth`).
 * `--folder_lq` / `--folder_gt`: low-/high-resolution folders.
-* `--mech`: set to `pnp_nystra` for the proposed method.
+* `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
+* `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
 ---
 
@@ -145,7 +148,8 @@ python run_uformer.py \
 * `--input_dir`: folder of noisy images (e.g. `datasets/Uformer/SIDD/val`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `denoise.pth`.
-* `--mech`: set to `pnp_nystra` to use the proposed method.
+* `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
+* `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
 #### 2.2 Deblurring (RealBlur-R)
 
@@ -160,7 +164,8 @@ python run_uformer.py \
 * `--input_dir`: folder of blurred images (e.g. `datasets/Uformer/RealBlur-R/val`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `deblur.pth`.
-* `--mech`: set to `pnp_nystra` for the proposed method.
+* `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
+* `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
 ---
 
@@ -179,11 +184,11 @@ python run_rvrt.py \
 * `--folder_lq` / `--folder_gt`: low-quality and ground-truth video folders.
 * `--model_path`: path to `Vid.pth` (for Vid4) or `REDS.pth` (for REDS4).
 * `--tile` / `--tile_overlap`: how the input is tiled (e.g. `10 64 64` and `2 20 20`).
-* `--mech`: set to `pnp_nystra` to enable the proposed plug-and-play Nystra method.
+* `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 
 ---
 
-You can swap `<Dataset>`, `<scale>`, or `<model>.pth` as needed—just ensure that `--mech` is `pnp_nystra` for the proposed PnP-Nystra method.
+You can swap `<Dataset>`, `<scale>`, `<model>.pth`, `device` and `mech` as needed to reproduce experiments from the paper.
 
 
 ### Break down into end to end tests
