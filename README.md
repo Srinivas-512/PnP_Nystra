@@ -152,10 +152,10 @@ python run_uformer.py \
 
 ```bash
 python run_uformer.py \
-    --input_dir   datasets/Uformer/RealBlur-R/val \
-    --result_dir  ./results/deblurring/RealBlur-R/ \
+    --input_dir   datasets/Uformer/RealBlur_R \
+    --result_dir  ./results/deblurring/RealBlur_R/ \
     --weights     pretrained_models/Uformer/deblur.pth \
-    --dataset     RealBlur_R
+    --dataset     RealBlur_R \
     --mech        pnp_nystra \
     --device      cuda
 ```
