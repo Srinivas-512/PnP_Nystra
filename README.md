@@ -80,7 +80,7 @@
      ```
 
 4. **Installing dependencies**
-   This code is tested on Python 3.12.2. From within the repository root, run:  
+   This code is tested on Python 3.12 ; From within the repository root, run:  
    ```bash
    pip install -r requirements.txt
    ```
