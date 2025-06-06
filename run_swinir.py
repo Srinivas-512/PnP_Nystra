@@ -22,9 +22,10 @@ def process_and_evaluate(
     sample_k=None,
 ):
     """
-    Common routine for both 'original' and 'new' mechanisms.
-    - mech: 'original' or 'pnp_nystra'.
-    - For mech == 'original', num_landmarks/iters are ignored (we hardcode 16,1).W
+    Common routine for both 'original' and 'pnp_nystra' mechanisms.
+    - mech: 'original' or 'pnp_nystra'
+    - For mech == 'original', num_landmarks/iters are ignored (we hardcode 16,1).
+    - For mech == 'pnp_nystra', you must pass (num_landmarks, iters).
     - sample_k: if not None, randomly sample `sample_k` image paths from the folder.
     """
 
