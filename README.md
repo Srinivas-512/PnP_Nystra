@@ -121,7 +121,8 @@ python run_swinir.py \
 
 * `--scale`: upscaling factor (2, 4 or 8).
 * `--model_path`: path to the `.pth` file (e.g. `x8.pth`).
-* `--folder_lq` / `--folder_gt`: low-/high-resolution folders.
+* `--folder_lq`: low-resolution folders (`datasets/SwinIR/<dataset name>/LR_bicubic/X<scale>`).
+* `--folder_gt`: high-resolution folders (`datasets/SwinIR/<dataset name>/HR`).
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
 * `--device`: set to `cuda` for GPU / `cpu` for CPU execution.
 
@@ -141,7 +142,7 @@ python run_uformer.py \
     --device      cuda
 ```
 
-* `--input_dir`: folder of noisy images (e.g. `datasets/Uformer/SIDD/val`).
+* `--input_dir`: folder of noisy images (`datasets/Uformer/SIDD/val` or `datasets/Uformer/BSDS200`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `denoise.pth`.
 * `--dataset`: dataset being tested (SIDD/BSDS)
@@ -160,7 +161,7 @@ python run_uformer.py \
     --device      cuda
 ```
 
-* `--input_dir`: folder of blurred images (e.g. `datasets/Uformer/RealBlur-R/val`).
+* `--input_dir`: folder of blurred images (`datasets/Uformer/RealBlur_R`).
 * `--result_dir`: folder where outputs will be saved.
 * `--weights`: path to `deblur.pth`.
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
@@ -180,7 +181,8 @@ python run_rvrt.py \
     --mech            pnp_nystra
 ```
 
-* `--folder_lq` / `--folder_gt`: low-quality and ground-truth video folders.
+* `--folder_lq` / `--folder_gt`: low-quality video folders (`datasets/RVRT/Vid4/BDx4` or `datasets/RVRT/REDS4/input`).
+* `--folder_gt`: ground-truth video folders (`datasets/RVRT/Vid4/GT` or `datasets/RVRT/REDS4/GT`).
 * `--model_path`: path to `Vid.pth` (for Vid4) or `REDS.pth` (for REDS4).
 * `--tile` / `--tile_overlap`: how the input is tiled (e.g. `10 64 64` and `2 20 20` to reproduce paper experiments).
 * `--mech`: set to `pnp_nystra` for the proposed method / `original` for original window attention.
