@@ -430,7 +430,7 @@ def main():
             sio.savemat(mat_out_path, {"RestoredBlocksSrgb": restored_all})
 
         # Evaluate metrics (SIDD ground-truth in SIDD/val/groundtruth)
-        sidd_gt_dir = os.path.join("SIDD", "val", "groundtruth")
+        sidd_gt_dir = os.path.join(args.input_dir, "groundtruth")
         print("SIDD metrics:")
         evaluate_metrics(result_png_dir, sidd_gt_dir, verbose=False)
 

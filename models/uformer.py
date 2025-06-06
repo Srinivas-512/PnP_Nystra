@@ -16,7 +16,7 @@ def closest_square_factors(N):
             return i, N // i
 
 class ExpLinearAfterThreshold(nn.Module):
-    def __init__(self, max_val=5.0):
+    def __init__(self, max_val=0.0):
         super(ExpLinearAfterThreshold, self).__init__()
         self.max_val = max_val
 
