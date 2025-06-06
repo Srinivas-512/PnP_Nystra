@@ -8,15 +8,12 @@
 
 import argparse
 import cv2
-import glob
 import os
 import torch
-import requests
 import numpy as np
 from os import path as osp
 from collections import OrderedDict
 from torch.utils.data import DataLoader
-import time
 from models.rvrt import RVRT as net
 from utils import rvrt_image_utils as util
 from utils.rvrt_dataset_utils import VideoRecurrentTestDataset, VideoTestVimeo90KDataset, SingleVideoRecurrentTestDataset
@@ -197,7 +194,7 @@ def main():
     
 
 def prepare_model_dataset(args, window_size, num_landmarks, iters):
-    ''' prepare model and dataset according to args.task. '''
+    ''' prepare model and dataset'''
 
     # define model
     model = net(attention_mechanism=args.mech, num_landmarks=num_landmarks, iters=iters, upscale=4, clip_size=2, img_size=[2, 64, 64], window_size=[2, window_size, window_size], num_blocks=[1, 2, 1],

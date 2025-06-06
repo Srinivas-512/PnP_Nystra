@@ -3,7 +3,6 @@ import sys
 import argparse
 import glob
 import math
-import random
 
 import numpy as np
 import torch
@@ -61,11 +60,11 @@ def expand2square(timg: torch.Tensor, factor: float = 16.0):
 
 
 def read_image_pil(image_path: str):
-    """Read an image via PIL and return as NumPy array (H×W×3, uint8)."""
+    """Read an image via PIL and return as NumPy array (HxWx3, uint8)."""
     return np.array(Image.open(image_path))
 
 
-def evaluate_metrics(restored_dir: str, original_dir: str, verbose: bool = False):
+def evaluate_metrics(restored_dir: str, original_dir: str):
     """
     Given two folders of PNGs—`restored_dir` and `original_dir`—compute PSNR/SSIM
     for every filename that appears in both. If `verbose=True`, print each image's
@@ -99,8 +98,6 @@ def evaluate_metrics(restored_dir: str, original_dir: str, verbose: bool = False
         psnr_vals.append(val_psnr)
         ssim_vals.append(val_ssim)
 
-        if verbose:
-            print(f"{fname}: SSIM={val_ssim:.4f}, PSNR={val_psnr:.2f}")
 
     avg_ssim = np.mean(ssim_vals)
     avg_psnr = np.mean(psnr_vals)
@@ -238,7 +235,7 @@ def main():
         # 1) BSDS denoising evaluation
         #
         WINDOW_SIZES = [64]
-        test_dataset = get_bsds_test_data(args.input_dir)
+        test_dataset = get_bsds_test_data(os.path.join(args.input_dir, "input"))
         test_loader = DataLoader(
             dataset=test_dataset,
             batch_size=args.batch_size,
@@ -251,7 +248,7 @@ def main():
             if args.mech == "original":
                 num_landmarks, iters = 16, 1
             else:  # pnp_nystra
-                num_landmarks, iters = 16, 6
+                num_landmarks, iters = 32, 6
 
             model = Uformer(
                 attention_mechanism=args.mech,
@@ -290,9 +287,9 @@ def main():
                     save_img(save_path, out_png)
 
         # Evaluate metrics (BSDS ground-truth in BSDS200/target)
-        bsds_gt_dir = os.path.join("BSDS200", "target")
+        bsds_gt_dir = os.path.join(args.input_dir, "target")
         print("BSDS metrics:")
-        evaluate_metrics(result_png_dir, bsds_gt_dir, verbose=False)
+        evaluate_metrics(result_png_dir, bsds_gt_dir)
 
     elif args.dataset == "RealBlur_R":
         #
@@ -358,9 +355,9 @@ def main():
                         save_img(save_path, out_png)
 
                 # Evaluate metrics (RealBlur ground-truth in <ds_name>/<ds_name>/test/target)
-                realblur_gt_dir = os.path.join(ds_name, ds_name, "test", "target")
+                realblur_gt_dir = os.path.join(args.input_dir, ds_name, "test", "target")
                 print(f"{ds_name} metrics:")
-                evaluate_metrics(result_dir_ds, realblur_gt_dir, verbose=True)
+                evaluate_metrics(result_dir_ds, realblur_gt_dir)
 
     elif args.dataset == "SIDD":
         #
@@ -379,7 +376,7 @@ def main():
             if args.mech == "original":
                 num_landmarks, iters = 16, 1
             else:
-                num_landmarks, iters = 16, 6
+                num_landmarks, iters = 32, 6
 
             model = Uformer(
                 attention_mechanism=args.mech,
@@ -432,7 +429,7 @@ def main():
         # Evaluate metrics (SIDD ground-truth in SIDD/val/groundtruth)
         sidd_gt_dir = os.path.join(args.input_dir, "groundtruth")
         print("SIDD metrics:")
-        evaluate_metrics(result_png_dir, sidd_gt_dir, verbose=False)
+        evaluate_metrics(result_png_dir, sidd_gt_dir)
 
     else:
         raise ValueError(f"Unsupported dataset: {args.dataset}")
