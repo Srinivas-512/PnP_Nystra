@@ -198,12 +198,7 @@ The file `timing_analysis.py` provides a simple script for measuring and compari
 
 **How to use:**
 
-1. Open `timing_analysis.py` and modify the following variables in the `__main__` block as needed:
-
-   * `all_sizes`: a list of window‐side lengths (e.g., `[16, 32, 64, 128]`). Each entry defines a square window of size `window_size × window_size` (so sequence length = `window_size²`).
-   * `num_landmarks`: number of landmarks (default `16`).
-   * `iters`: number of iterations for the Moore-Penrose pseudo-inverse (default `3`).
-   * `device`: either `'cpu'` or `'cuda'` (default `'cpu'`).
+1. Open `timing_analysis.py` and follow the instructions in the header comment to change any parameters if needed
 
 2. Run the script as-is. For example:
 
