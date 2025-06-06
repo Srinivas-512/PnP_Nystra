@@ -181,7 +181,7 @@ python run_rvrt.py \
     --mech            pnp_nystra
 ```
 
-* `--folder_lq` / `--folder_gt`: low-quality video folders (`datasets/RVRT/Vid4/BDx4` or `datasets/RVRT/REDS4/input`).
+* `--folder_lq` / `--folder_gt`: low-quality video folders (`datasets/RVRT/Vid4/BDx4` or `datasets/RVRT/REDS4/sharp_bicubic`).
 * `--folder_gt`: ground-truth video folders (`datasets/RVRT/Vid4/GT` or `datasets/RVRT/REDS4/GT`).
 * `--model_path`: path to `Vid.pth` (for Vid4) or `REDS.pth` (for REDS4).
 * `--tile` / `--tile_overlap`: how the input is tiled (e.g. `10 64 64` and `2 20 20` to reproduce paper experiments).
