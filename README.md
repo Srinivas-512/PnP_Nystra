@@ -15,15 +15,12 @@
 
 
 ## 📝 Table of Contents
-- [About](#about)
 - [Prerequisites](#getting_started)
 - [Running inference](#tests)
 - [Timing analysis](#timing)
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## About <a name = "about"></a>
-Write about 1-2 paragraphs describing the purpose of your project.
 
 ## Prerequisites <a name = "getting_started"></a>
 
