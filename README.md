@@ -219,7 +219,7 @@ Because this is meant for the ablation study (to demonstrate how runtime scales 
 
 
 ## Authors <a name = "authors"></a>
-- [Srinivasan Kidambi](https://github.com/Srinivas-512) 
+- [Srinivasan Kidambi](https://github.com/Srinivas-512) (Dept. of Electrical Engineering, IIT Madras)
 - [Dr. Pravin Nair](https://github.com/pravin1390) (Dept. of Electrical Engineering, IIT Madras)
 
 
