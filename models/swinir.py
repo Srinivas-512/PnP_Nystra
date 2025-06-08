@@ -90,7 +90,7 @@ def window_reverse(windows, window_size, H, W):
 
 
 class WindowAttention(nn.Module):
-    r""" Window based multi-head self attention (W-MSA) module with relative position bias.
+    r""" Window based multi-head self attention (W-MSA) module.
     It supports both of shifted and non-shifted window.
 
     Args:
@@ -124,7 +124,6 @@ class WindowAttention(nn.Module):
         """
         Args:
             x: input features with shape of (num_windows*B, N, C)
-            mask: (0/-inf) mask with shape of (num_windows, Wh*Ww, Wh*Ww) or None
         """
         B_, N, C = x.shape
         qkv = self.qkv(x).reshape(B_, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
@@ -147,7 +146,7 @@ class WindowAttention(nn.Module):
 
 
 class PnPNystraAttention(nn.Module):
-    r""" Window based multi-head self attention (W-MSA) module with relative position bias.
+    r""" Proposed approximation of window based multi-head self attention (W-MSA) module.
     It supports both of shifted and non-shifted window.
 
     Args:
@@ -202,7 +201,6 @@ class PnPNystraAttention(nn.Module):
         """
         Args:
             x: input features with shape of (num_windows*B, N, C)
-            mask: (0/-inf) mask with shape of (num_windows, Wh*Ww, Wh*Ww) or None
         """
         B_, N, C = x.shape
 
