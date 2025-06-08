@@ -381,7 +381,6 @@ class WindowAttention(nn.Module):
 
         Args:
             x: input features with shape of (num_windows*B, N, C)
-            mask: (0/-inf) mask with shape of (num_windows, N, N) or None
         """
 
         # self attention
@@ -406,7 +405,7 @@ class WindowAttention(nn.Module):
 
 
 class PnPNystraAttention(nn.Module):
-    """ Window based multi-head self attention.
+    """ Proposed approximation of window based multi-head self attention.
 
     Args:
         dim (int): Number of input channels.
@@ -437,7 +436,6 @@ class PnPNystraAttention(nn.Module):
 
         Args:
             x: input features with shape of (num_windows*B, N, C)
-            mask: (0/-inf) mask with shape of (num_windows, N, N) or None
         """
 
         # self attention
